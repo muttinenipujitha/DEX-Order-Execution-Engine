@@ -73,7 +73,6 @@ Optimized development workflow with production-grade build output.
 - Reusable hooks
 
 ---
-
 ## 🚀 Getting Started
 
 ```bash
@@ -88,13 +87,14 @@ bun run build
 
 # Start production server
 bun start
-Open the application in your browser:
+
+🌐 Open in Browser
+
+Once the server is running, open:
 
 http://localhost:3000
 
 📁 Project Structure
-graphql
-Copy code
 src/
 ├── app/                 # Next.js App Router pages
 ├── components/          # Reusable React components
@@ -104,8 +104,10 @@ src/
 ├── styles/              # Global and component styles
 ├── types/               # Shared TypeScript types
 └── services/            # API and data access logic
+
 🎨 Key Features
 UI & Layout
+
 Accessible components
 
 Mobile-first responsive design
@@ -113,6 +115,7 @@ Mobile-first responsive design
 Skeleton loaders and progress indicators
 
 Forms & Data
+
 Type-safe validation
 
 Dynamic tables with filtering and pagination
@@ -120,6 +123,7 @@ Dynamic tables with filtering and pagination
 Charts and dashboards
 
 Interactivity
+
 Smooth animations
 
 Drag-and-drop support
@@ -127,6 +131,7 @@ Drag-and-drop support
 Theme switching (light/dark)
 
 Backend Integration
+
 Structured API layer
 
 Prisma-ready database setup
@@ -134,6 +139,7 @@ Prisma-ready database setup
 Scalable data-fetching patterns
 
 🚀 Production Readiness
+
 Designed with deployment and scale in mind:
 
 Environment-based configuration
@@ -145,6 +151,11 @@ Image and asset optimization
 Clear separation of concerns
 
 Future-proof architecture
+
+🤝 Contribution Guidelines
+
+Contributions are welcome.
+Please follow standard GitHub workflows and ensure code quality, consistency, and proper documentation when submitting changes.
 
 🤝 Contribution Guidelines
 Contributions are welcome.
