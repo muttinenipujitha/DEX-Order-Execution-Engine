@@ -1,0 +1,124 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  orders    Order[]
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  authorId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Order {
+  id              String   @id @default(cuid())
+  userId          String?
+  user            User?    @relation(fields: [userId], references: [id])
+  
+  // Order details
+  type            OrderType @default(MARKET)
+  tokenIn         String    // Input token mint address
+  tokenOut        String    // Output token mint address
+  amountIn        String    // Amount in (as string to handle large numbers)
+  amountOut       String?   // Expected amount out
+  slippage        Float     @default(0.01) // 1% default slippage
+  
+  // Execution details
+  status          OrderStatus @default(PENDING)
+  chosenDex       DEX?
+  executedPrice   String?
+  transactionHash String?
+  
+  // Routing decision
+  raydiumPrice    String?
+  meteoraPrice    String?
+  priceDifference Float?
+  
+  // Error handling
+  errorMessage    String?
+  retryCount      Int       @default(0)
+  
+  // Timestamps
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  transactions    Transaction[]
+}
+
+model Transaction {
+  id              String   @id @default(cuid())
+  orderId         String
+  order           Order    @relation(fields: [orderId], references: [id])
+  
+  // Transaction details
+  dex             DEX
+  txHash          String?
+  blockNumber     String?
+  gasUsed         String?
+  gasPrice        String?
+  
+  // Execution details
+  amountIn        String
+  amountOut       String
+  price           String
+  slippage        Float
+  
+  // Status
+  status          TransactionStatus @default(PENDING)
+  errorMessage    String?
+  
+  // Timestamps
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+enum OrderType {
+  MARKET
+  LIMIT
+  SNIPER
+}
+
+enum OrderStatus {
+  PENDING
+  ROUTING
+  BUILDING
+  SUBMITTED
+  CONFIRMED
+  FAILED
+}
+
+enum DEX {
+  RAYDIUM
+  METEORA
+}
+
+enum TransactionStatus {
+  PENDING
+  CONFIRMED
+  FAILED
+}
