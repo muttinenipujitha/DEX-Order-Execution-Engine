@@ -74,7 +74,7 @@ Optimized development workflow with production-grade build output.
 
 ---
 
-## 🚀 Getting Started
+### 🚀 Getting Started
 
 ```bash
 # Install dependencies
