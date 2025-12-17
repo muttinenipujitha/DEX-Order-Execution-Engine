@@ -1,0 +1,22 @@
+{
+  "name": "order-execution-service",
+  "version": "1.0.0",
+  "description": "Order execution engine with DEX routing and WebSocket support",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "bun run index.ts",
+    "start": "bun run index.ts",
+    "build": "bun build index.ts --outdir dist --target bun",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "socket.io": "^4.7.5",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@types/uuid": "^9.0.8",
+    "typescript": "^5.5.3",
+    "ts-node": "^10.9.2"
+  }
+}
