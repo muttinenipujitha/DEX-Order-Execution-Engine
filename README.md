@@ -106,7 +106,7 @@ Transparent lifecycle state management
 
 🎥 Watch 2-minute Demo
 ```bash
-(Add your demo link here)
+https://drive.google.com/file/d/10Ek5I63d09PZ84Y6JdLSY1ahT8RraM7P/view?usp=sharing
 ```
 
 🔌 API Endpoints
@@ -160,6 +160,6 @@ ws://localhost:3004
 
 📞 Contact & Links
 
-    🌐 Live Demo: https://your-app-url.com
-    📁 GitHub: https://github.com/your-username/dex-order-execution
+    🌐 Live Demo: https://drive.google.com/file/d/10Ek5I63d09PZ84Y6JdLSY1ahT8RraM7P/view?usp=sharing
+    📁 GitHub: https://github.com/muttinenipujitha/DEX-Order-Execution-Engine
     📧 Email: muttinenipujitha@gmail.com
