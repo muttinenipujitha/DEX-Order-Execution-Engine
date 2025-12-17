@@ -50,23 +50,28 @@ cd dex-order-execution-engine
 bun install
 bun run db:push
 Start Services
-bash
-Copy code
-# Terminal 1
+```
+
+### Terminal 1
+```bash
 cd mini-services/order-execution
 bun run dev
+```
 
-# Terminal 2
+### Terminal 2
+```bash
 bun run dev
 Open Application
-arduino
-Copy code
 http://localhost:3000
+```
 💼 Project Highlights
+
 🎯 Order Processing Pipeline
-nginx
-Copy code
+
+```bash
 PENDING → ROUTING → BUILDING → SUBMITTED → CONFIRMED
+```
+
 Intelligent DEX routing with 2–5% simulated price variance
 
 Exponential backoff retry logic (max 3 retries)
@@ -76,80 +81,85 @@ Full transaction hash tracking
 Transparent lifecycle state management
 
 📊 Performance Metrics
-✅ 10 concurrent orders processing
 
-✅ 100+ orders per minute throughput
+    ✅ 10 concurrent orders processing
 
-✅ < 5 seconds average execution time
+    ✅ 100+ orders per minute throughput
 
-✅ 95%+ success rate under load
+    ✅ < 5 seconds average execution time
+
+    ✅ 95%+ success rate under load
 
 🧪 Quality Assurance
-15+ comprehensive test cases
 
-DEX routing logic validation
+    15+ comprehensive test cases
 
-WebSocket lifecycle testing
+    DEX routing logic validation
 
-Queue and concurrency verification
+    WebSocket lifecycle testing
 
-Error handling & retry logic coverage
+    Queue and concurrency verification
+
+    Error handling & retry logic coverage
 
 🎬 Demo Video
+
 🎥 Watch 2-minute Demo
+```bash
 (Add your demo link here)
+```
 
 🔌 API Endpoints
+
 Submit Order
-http
-Copy code
+
 POST /api/orders
-json
-Copy code
+```bash
 {
   "tokenIn": "SOL_ADDRESS",
   "tokenOut": "USDC_ADDRESS",
   "amountIn": "1.0",
   "slippage": 0.01
 }
-Get Orders
-http
-Copy code
+```
+Fetch Orders
+```bash
 GET /api/orders
+
 GET /api/orders?orderId=<uuid>
-WebSocket Updates
-arduino
-Copy code
+```
+🔔 WebSocket Interface
+
+Endpoint
+```bash
 ws://localhost:3004
-🧪 Testing
-Run all tests:
 
-bash
-Copy code
-bun test
-Covered Areas
-✅ DEX routing logic
+```
 
-✅ Queue management
+### Covered Areas
 
-✅ WebSocket lifecycle
+    ✅ DEX routing logic
 
-✅ Error handling & retry logic
+    ✅ Queue management
 
-✅ Performance & throughput
+    ✅ WebSocket lifecycle
+
+    ✅ Error handling & retry logic
+
+    ✅ Performance & throughput
 
 🏆 Why This Implementation
-Market Orders chosen to showcase immediate execution flow
 
-Mock DEX layer ensures deterministic, reliable demos
+    Market Orders chosen to showcase immediate execution flow
 
-Queue-based architecture highlights production-ready scalability
+    Mock DEX layer ensures deterministic, reliable demos
 
-Real-time updates demonstrate modern system design patterns
+    Queue-based architecture highlights production-ready   scalability
+
+    Real-time updates demonstrate modern system design patterns
 
 📞 Contact & Links
-🌐 Live Demo: https://your-app-url.com
 
-📁 GitHub: https://github.com/your-username/dex-order-execution
-
-📧 Email: muttinenipujitha@gmail.com
+    🌐 Live Demo: https://your-app-url.com
+    📁 GitHub: https://github.com/your-username/dex-order-execution
+    📧 Email: muttinenipujitha@gmail.com
